@@ -1,0 +1,20 @@
+
+{% extends 'shope/base.html' %}
+
+{% block title %}Order Confirmation{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center; margin: 20px 0;">Order Confirmation</h1>
+<p style="text-align: center; margin: 10px 0;">Thank you for your order! Here are the details:</p>
+<div class="order-details" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 600px; margin: 20px auto; text-align: left;">
+    <p style="margin: 5px 0;">Order ID: {{ order.id }}</p>
+    <p style="margin: 5px 0;">Total Cost: ${{ order.total_cost }}</p>
+    <p style="margin: 5px 0;">Shipping Address: {{ order.shipping_address }}</p>
+</div>
+<h2 style="text-align: center; margin: 20px 0;">Ordered Items</h2>
+<ul style="list-style: none; padding: 0;">
+    {% for item in order.items.all %}
+        <li style="background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; margin: 5px 0; padding: 10px; text-align: left;">{{ item.quantity }} of {{ item.book.title }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

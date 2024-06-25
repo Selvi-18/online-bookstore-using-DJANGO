@@ -1,0 +1,25 @@
+
+{% extends 'shope/base.html' %}
+
+{% block title %}Orders List{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center; margin: 20px 0;">All Orders</h1>
+<ul style="list-style: none; padding: 0; display: flex; flex-direction: column; align-items: center;">
+    {% for order in orders %}
+        <li style="background-color: white; border: 1px solid #ccc; border-radius: 10px; margin: 10px; padding: 20px; width: 90%; max-width: 600px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <p style="margin: 5px 0;"><strong>Order ID:</strong> {{ order.id }}</p>
+            <p style="margin: 5px 0;"><strong>Total Cost:</strong> ${{ order.total_cost }}</p>
+            <p style="margin: 5px 0;"><strong>Shipping Address:</strong> {{ order.shipping_address }}</p>
+            <div class="order-items" style="margin-top: 10px;">
+                <h2 style="font-size: 18px; margin: 10px 0;">Ordered Items</h2>
+                <ul style="list-style: none; padding: 0;">
+                    {% for item in order.items.all %}
+                        <li style="background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; margin: 5px 0; padding: 10px;">{{ item.quantity }} of {{ item.book.title }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

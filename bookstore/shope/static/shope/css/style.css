@@ -1,0 +1,103 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+header {
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+header nav h1 {
+    margin: 0;
+    font-size: 2rem;
+    flex: 1;
+}
+header nav form {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-end;
+}
+header nav ul li {
+    margin: 0 1rem;
+}
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+}
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+main {
+    padding: 2rem;
+    text-align: center;
+}
+footer {
+    
+    color: #333;
+    text-align: center;   
+    width: 100%;
+    bottom: 0;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+button:hover {
+    background-color: #555;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+form input[type="text"] {
+    padding-top: 15px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+form button:hover {
+    background-color: #555;
+}

@@ -1,0 +1,21 @@
+
+{% extends 'shope/base.html' %}
+
+{% block title %}Book List{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center; margin: 20px 0;">Available Books</h1>
+
+<ul class="book-list" style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center;">
+    {% for book in books %}
+        <li style="background-color: white; border: 1px solid #ccc; border-radius: 10px; margin: 10px; padding: 20px; width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center;">
+            <img src="{{ book.cover_image.url }}" alt="{{ book.title }}" style="max-width: 100%; height: auto; border-bottom: 1px solid #ccc; margin-bottom: 15px;">
+            <h2 style="font-size: 18px; margin: 10px 0;">{{ book.title }}</h2>
+            <p style="margin: 5px 0;">{{ book.author }}</p>
+            <p style="margin: 5px 0;">₹
+                {{ book.price }}</p>
+            <a href="{% url 'add_to_cart' book.id %}" style="display: inline-block; margin-top: 10px; padding: 10px 15px; background-color: #333; color: white; text-decoration: none; border-radius: 5px; cursor: pointer;">Add to Cart</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
